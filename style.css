@@ -308,7 +308,70 @@ body {
     background-color: #0056b3;
 }
 
+/* about page styles */
+.about-section{
+    background-color: black;
+    color: white;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
 
+.about-section #about-img{
+    height: 600px;
+    width: 500px;
+    margin: 30px;
+    
+    border-radius: 20%;  /* rounded corners */
+}
+.about-section .about-text {
+    position: absolute; /* Position absolutely within the about-section */
+    top: 15%; /* Adjust this value to move it higher or lower */
+    left: 40%; /* Adjust horizontal positioning as needed */
+    max-width: 50%; /* Limit the width of the text container */
+  }
+
+  .about-section .about-text .h1-about{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: red;
+}
+.about-section .about-text .h2-about{
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.about-para{
+    font-size: 20px;
+    margin-bottom: 30px;
+}
+.about-text .social{
+    margin-right: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50; 
+    color: white; 
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-top: 40px;
+}
+
+.contact-btn:hover {
+    background-color: red; 
+    transform: translateY(-2px); 
+}
+
+.contact-btn a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
 
 
 
