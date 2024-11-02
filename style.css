@@ -1,13 +1,16 @@
 body{
     
     font-family: "Roboto", sans-serif;
+
 }
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
+
 /* navigation bar style */
+
 .nav-bar{
     display: flex;
     flex-direction: row;
@@ -21,14 +24,14 @@ body{
     font-weight: 100px;
     margin-left: 10px;
 }
-.nav-bar .nav-list {
+.nav-bar .nav-list {  /* using child combination */
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
 }
     
-.nav-bar .nav-list .item{
+.nav-bar .nav-list .item{   /* using child combination */
     font-size: 25px;
     margin-left: 40px;
     color: aliceblue;
@@ -40,14 +43,20 @@ body{
     border-radius: 4px;
     transition: background-color 0.3s ease;   /* using transition*/
 }
-.nav-list .item a:hover {
+.nav-list .item a:hover {   /* using action psuedo class */
     color: red;
 }
 
-.nav-list .item a:hover::after {
+.nav-list .item a:hover::after {  /* using psuedo elements */
     width: 100%;
 }
-
+.name {
+    color: inherit; 
+    text-decoration: none; /* Remove underline */
+    background: none; 
+    border: none; 
+    cursor: pointer; 
+}
 
 /* footer styling  */
 .footer{
@@ -78,7 +87,7 @@ body{
     color: white;
 }
 
-.social:hover {
+.social:hover {       /* using action psuedo class */
     color: #e91414;
 } 
   
@@ -110,8 +119,8 @@ body{
     -webkit-text-stroke: 0.3vw rgb(34, 34, 34);   /* text stroke effect */
     text-transform: uppercase;  /* transform text to uppercase */
 }
-.home-header::before{
-    content: attr(data-text);
+.home-header::before{   /* using Pseudo elements */
+    content: attr(data-text);    /* using attribute selector */
     position: absolute;
     top: 0;
     left: 0;
@@ -148,6 +157,65 @@ body{
     border-radius: 10%;   /* rounded coners */
 }
 
+
+
+/* about page styles */
+.about-section{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+}
+
+.about-section #about-img{
+    height: 600px;
+    width: 400px;
+    margin: 30px;
+    border-radius: 40px;  /* rounded corners */
+}
+
+.about-section .about-text h1{
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: red;
+}
+.about-section .about-text h2{
+    font-size: 40px;
+    margin-bottom: 20px;
+    margin-right: 30px;
+}
+
+.about-section .about-text p{
+    font-size: 20px;
+    margin-bottom: 30px;
+    margin-right: 100px;
+}
+.about-text .social{
+    margin-right: 10px;
+}
+
+.contact-btn {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #4CAF50; 
+    color: white; 
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px; 
+    font-weight: bold; 
+    margin-top: 40px;
+}
+
+.contact-btn:hover {
+    background-color: red; 
+    transform: translateY(-2px); 
+}
+
+.contact-btn a {
+    color: inherit; /* Inherit color from parent */
+    text-decoration: none; /* Remove underline */
+}
 
 /* contact page styles */
 .contact-Container{
@@ -218,12 +286,13 @@ body{
   color: white;
 }
 
-.contact-Container .contact-form .btn{
+.contact-Container .contact-form .btn[data-action="submit"]{  /* using attribute selector */ 
     width: 100%;
     height: 40px;
     background-color: greenyellow;
     margin-top: 30px;
     border-radius: 30px;
+    cursor: pointer;
 }
 
 /* From https://css.glass */
@@ -308,96 +377,83 @@ body {
     background-color: #0056b3;
 }
 
-/* about page styles */
-.about-section{
-    background-color: black;
-    color: white;
-    height: 100vh;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-}
-
-.about-section #about-img{
-    height: 600px;
-    width: 500px;
-    margin: 30px;
-    
-    border-radius: 20%;  /* rounded corners */
-}
-.about-section .about-text {
-    position: absolute; /* Position absolutely within the about-section */
-    top: 15%; /* Adjust this value to move it higher or lower */
-    left: 40%; /* Adjust horizontal positioning as needed */
-    max-width: 50%; /* Limit the width of the text container */
-  }
-
-  .about-section .about-text .h1-about{
-    font-size: 50px;
-    margin-bottom: 20px;
-    color: red;
-}
-.about-section .about-text .h2-about{
-    font-size: 40px;
-    margin-bottom: 20px;
-}
-
-.about-para{
-    font-size: 20px;
-    margin-bottom: 30px;
-}
-.about-text .social{
-    margin-right: 10px;
-}
-
-.contact-btn {
-    display: inline-block;
-    padding: 12px 24px;
-    background-color: #4CAF50; 
-    color: white; 
-    border-radius: 25px; /* Rounded corners */
-    font-size: 16px; 
-    font-weight: bold; 
-    margin-top: 40px;
-}
-
-.contact-btn:hover {
-    background-color: red; 
-    transform: translateY(-2px); 
-}
-
-.contact-btn a {
-    color: inherit; /* Inherit color from parent */
-    text-decoration: none; /* Remove underline */
-}
 
 
-
+/* Responsive adjustments */
 @media (max-width: 768px) {
-
-    /* navigation bar  */
-    .nav-bar {
-        flex-direction: column;
-        align-items: center;
-        padding: 1rem;
-      }
-    
-      #nav-header {
-        margin-bottom: 1rem;
-        font-size: 1.5rem;
-      }
-    
-      .nav-list {
-        flex-direction: column;
-        align-items: center;
+    .project-card, .blog-card {
         width: 100%;
-      }
-    
-      .nav-list .item {
-        margin: 0.5rem 0;
-        font-size: 1rem;
-      }
+    }
+}
 
-  }
+/* Responsive adjustments for home page */
+@media (max-width: 768px) {
+    .home-section {
+        flex-direction: column; 
+        height: auto; 
+        padding: 1rem; 
+    }
+
+    .home-text {
+        margin-right: 0; 
+        margin-bottom: 20px; 
+        font-size: 1.2rem; 
+    }
+
+    .home-header {
+        font-size: 40px;
+    }
+
+    #img-home {
+        width: 100%;
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Responsive adjustments for navigation bar */
+    .nav-bar {
+        flex-direction: column; 
+        align-items: center;
+         
+    }
+
+    .nav-bar #nav-header {
+        margin-left: 0; 
+        margin-bottom: 10px; 
+    }
+
+    .nav-bar .nav-list {
+        flex-direction: column; 
+        align-items: center;
+        width: 100%; 
+    }
+
+    .nav-bar .nav-list .item {
+        margin-left: 0; 
+        margin-bottom: 10px; 
+    }
+
+    /* Responsive adjustments for about page */
+    .about-section {
+        flex-direction: column; 
+        align-items: center;
+        padding: 1rem; 
+    }
+
+    #about-img {
+        width: 100%; 
+        height: auto; 
+        margin-bottom: 1rem; 
+    }
+
+    .about-text {
+        text-align: center; 
+        width: 100%; 
+        margin-right: 0px; 
+        margin-left: 80px;
+    }
+
+}
+
+
+
+
