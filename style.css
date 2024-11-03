@@ -82,15 +82,15 @@ body{
 .footer .social-media .social{
     margin-left: 10px;
 }
-.footer .social-media #github-icon{
-    
+.social:hover svg {
+    color : #e91414; /* Change fill color to red on hover */
+}
+.social {
+    text-decoration: none; /* Remove underline from links */
+}
+.social svg{
     color: white;
 }
-
-.social:hover {       /* using action psuedo class */
-    color: #e91414;
-} 
-  
 
 /* home page styles */
 .home-section{
@@ -157,6 +157,14 @@ body{
     border-radius: 10%;   /* rounded coners */
 }
 
+.home-text .social-media{
+    margin-top: 50px;   
+}
+.home-text .social-media svg{
+    margin-left: 20px; 
+    width: 36px; 
+    height: 36px;
+}
 
 
 /* about page styles */
@@ -167,6 +175,10 @@ body{
     flex-direction: row;
     align-items: center;
     gap: 70px;
+}
+
+ .about-section > .img { /* using structral selector */
+    flex: 1; /* Allow image to take available space */
 }
 
 .about-section #about-img{
@@ -319,9 +331,12 @@ body {
     padding: 0; 
     margin: 0;
 }
+#projects{
+    margin-bottom: 50px;
+}
 .content-container {
     max-width: 1200px;
-    margin: 0 auto;
+    margin: 0px auto;
     padding: 2rem;
 }
 
@@ -379,12 +394,7 @@ body {
 
 
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-    .project-card, .blog-card {
-        width: 100%;
-    }
-}
+
 
 /* Responsive adjustments for home page */
 @media (max-width: 768px) {
@@ -452,6 +462,10 @@ body {
         margin-left: 80px;
     }
 
+    /* Responsive adjustments project page */
+    .project-card, .blog-card {
+        width: 100%;
+    }
 }
 
 
