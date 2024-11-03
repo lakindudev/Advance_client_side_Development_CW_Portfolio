@@ -57,6 +57,11 @@ body{
     border: none; 
     cursor: pointer; 
 }
+/* using negation psuedo class */
+.nav-list .item:not(.special) {
+    color: red; /* Applies to all items except those with the class "special" */
+}
+
 
 /* footer styling  */
 .footer{
@@ -325,9 +330,8 @@ body{
 
 
 /* Projects and Blogs page styles */
-body {
-    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%); /* using gradient */
-    color: #fff; 
+.project {
+    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%); /* using gradient */ 
     padding: 0; 
     margin: 0;
 }
@@ -391,9 +395,103 @@ body {
 .view-button:hover, .read-more-button:hover {
     background-color: #0056b3;
 }
+/* using the Nth pseudo class */
+.project-card:nth-child(3n) {
+    border: 2px solid red; /* Add a red border to every third project card */
+}
 
 
+/* blog page styles */
+#blog{
+    background-color: #f9f3e9;
+    
+}
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+    background: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
 
+.container h1 {
+    color: #d9534f;
+    text-align: center;
+}
+
+h2 {
+    color: #5bc0de;
+    margin-top: 20px;
+}
+
+article, aside {
+    margin: 20px 0;
+}
+
+article p {
+    margin: 10px 0;
+}
+
+.conclusion {
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+aside {
+    background: #f9f9f9;
+    padding: 15px;
+    border-left: 4px solid #d9534f;
+    color: #555;
+}
+
+aside h2 {
+    font-size: 1.2em;
+    color: #d9534f;
+}
+
+aside p {
+    font-size: 0.9em;
+}
+
+.container-2 {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 800px;
+    margin: 0px auto;
+    padding: 20px;
+    background: #f5f5f5;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.container-2 h1 {
+    color: #4e73df;
+    text-align: center;
+    font-weight: 700;
+}
+
+.container-2 article p {
+    margin: 10px 0;
+    line-height: 1.6;
+    color: #333;
+}
+
+.container-2 h2 {
+    color: #1cc88a;
+    margin-top: 20px;
+    font-size: 1.5em;
+}
+
+.container-2 .conclusion {
+    font-weight: bold;
+    margin-top: 20px;
+    color: #d9534f;
+}
 
 
 /* Responsive adjustments for home page */
