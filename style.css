@@ -84,7 +84,7 @@ body{
 .footer .footer-content{
     margin-bottom: 15px;
 }
-.footer .social-media .social{
+.footer .social-media .social{ /* Relational selector */
     margin-left: 10px;
 }
 .social:hover svg {
@@ -109,7 +109,7 @@ body{
     margin: 0;
     padding: 0;
 }
-.home-text{
+.home-section .home-text{ /* Relatioal Selectors */
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
@@ -268,7 +268,7 @@ body{
     padding: 0.75rem;
     font-size: 1rem;
     background-color: #333;
-    border: 1px solid #555;
+    border: 1px solid #555;  /* border */
     color: white;
     border-radius: 4px;  
     
@@ -310,7 +310,13 @@ body{
     margin-top: 30px;
     border-radius: 30px;
     cursor: pointer;
+    font-size: 20px;
+    color: black;
 }
+.contact-Container .contact-form .btn[data-action="submit"]:hover{
+    background-color: #0056b3;
+}
+
 
 /* From https://css.glass */
 .contact-form{
@@ -326,6 +332,21 @@ body{
     width: 100%; 
     max-width: 800px; 
     margin: 20px auto;
+}
+/* Valid state styling */
+.contact-Container .contact-form input:valid,
+.contact-Container .contact-form textarea:valid,
+.contact-Container .contact-form select:valid {
+    border-color: green; /* Green border for valid fields */
+    box-shadow: 0 0 5px green; /* Green glow effect for valid fields */
+}
+
+/* Invalid state styling */
+.contact-Container .contact-form input:invalid,
+.contact-Container .contact-form textarea:invalid,
+.contact-Container .contact-form select:invalid {
+    border-color: red; /* Red border for invalid fields */
+    box-shadow: 0 0 5px red; /* Red glow effect for invalid fields */
 }
 
 
