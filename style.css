@@ -1,70 +1,80 @@
-body{
-    
+body {
     font-family: "Roboto", sans-serif;
-
-}
-* {
+  }
+  /* Reset default styles */
+  * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
   }
-
-/* navigation bar style */
-
-.nav-bar{
+  /* ----------------------------- Navigation Styles ----------------------------- */
+  
+  /* flecbox for horizontal navigation layout */
+  /* .nav-bar uses a class selector with specificity (0,0,1,0) */
+  .nav-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     padding: 1rem 1.5rem;
     background-color: grey;
-}
-.nav-bar #nav-header{
+  }
+  /* styling for the nav header */
+  /* Higher specificity due to combination of ID and class selector (0,1,1,0) */
+  
+  .nav-bar #nav-header {
     font-size: 2rem;
     font-weight: 100px;
     margin-left: 10px;
-}
-.nav-bar .nav-list {  /* using child combination */
+  }
+  /* flexbox for navigation list items */
+  /* using child combination */
+  .nav-bar .nav-list {
     display: flex;
     list-style-type: none;
     padding: 0;
     margin: 0;
-}
-    
-.nav-bar .nav-list .item{   /* using child combination */
+  }
+  /* Individual item styles in the navigation list */
+  .nav-bar .nav-list .item {
+    /* using child combination */
     font-size: 25px;
     margin-left: 40px;
     color: aliceblue;
-}
-.nav-list .item a {
+  }
+  /* Styling for navigation links */
+  .nav-list .item a {
     text-decoration: none;
     color: white;
     padding: 0.5rem 1rem;
     border-radius: 4px;
-    transition: background-color 0.3s ease;   /* using transition*/
-}
-.nav-list .item a:hover {   /* using action psuedo class */
+    transition: background-color 0.3s ease; /* using transition*/
+  }
+  /* Hover effect for navigation links */
+  /* using action psuedo class */
+  .nav-list .item a:hover {
     color: red;
-}
-
-.nav-list .item a:hover::after {  /* using psuedo elements */
+  }
+  /* using psuedo elements */
+  .nav-list .item a:hover::after {
     width: 100%;
-}
-.name {
-    color: inherit; 
+  }
+  /* styling for nav header as a button */
+  .name {
+    color: inherit;
     text-decoration: none; /* Remove underline */
-    background: none; 
-    border: none; 
-    cursor: pointer; 
-}
-/* using negation psuedo class */
-.nav-list .item:not(.special) {
+    background: none;
+    border: none;
+    cursor: pointer;
+  }
+  /* using negation psuedo class */
+  .nav-list .item:not(.special) {
     color: red; /* Applies to all items except those with the class "special" */
-}
-
-
-/* footer styling  */
-.footer{
+  }
+  
+  /* ----------------------------- Footer Styles ----------------------------- */
+  /* Flexbox for footer layout */
+  .footer {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -72,33 +82,42 @@ body{
     background-color: #333;
     color: #fff;
     padding: 20px;
-}
-.footer-para {
+  }
+  /* paragraph styling of the footer */
+  .footer-para {
     display: flex;
     align-items: center;
     margin: 0;
+    /* using semi-transparent colors */
+    color: rgba(255, 255, 255, 0.7); /* White text with 70% opacity */
+  
   }
-.footer .h4content{
+  .footer .h4content {
     font-weight: 0.5rem;
-}  
-.footer .footer-content{
+  }
+  .footer .footer-content {
     margin-bottom: 15px;
-}
-.footer .social-media .social{ /* Relational selector */
+  }
+  /* style social media links */
+  /* using Relational selector */
+  .footer .social-media .social {
     margin-left: 10px;
-}
-.social:hover svg {
-    color : #e91414; /* Change fill color to red on hover */
-}
-.social {
-    text-decoration: none; /* Remove underline from links */
-}
-.social svg{
+  }
+  /* Change fill color to red on hover */
+  .social:hover svg {
+    color: #e91414;
+  }
+  /* Remove underline from links */
+  .social {
+    text-decoration: none;
+  }
+  .social svg {
     color: white;
-}
-
-/* home page styles */
-.home-section{
+  }
+  
+  /* ----------------------------- Home Page Styles ----------------------------- */
+  
+  .home-section {
     color: white;
     background-color: rgb(34, 34, 34);
     display: flex;
@@ -108,24 +127,26 @@ body{
     height: 100vh;
     margin: 0;
     padding: 0;
-}
-.home-section .home-text{ /* Relatioal Selectors */
+  }
+  /* Relatioal Selectors */
+  .home-section .home-text {
     font-size: 1.5rem;
     font-weight: 600;
     text-align: center;
     margin-right: 100px;
-}
-
-.home-header{
+  }
+  
+  .home-header {
     margin-bottom: 60px;
     font-size: 60px;
     color: rgb(34, 34, 34);
     position: relative;
-    -webkit-text-stroke: 0.3vw rgb(34, 34, 34);   /* text stroke effect */
-    text-transform: uppercase;  /* transform text to uppercase */
-}
-.home-header::before{   /* using Pseudo elements */
-    content: attr(data-text);    /* using attribute selector */
+    -webkit-text-stroke: 0.3vw rgb(34, 34, 34); /* text stroke effect */
+    text-transform: uppercase; /* transform text to uppercase */
+  }
+  /* using Pseudo elements */
+  .home-header::before {
+    content: attr(data-text); /* using attribute selector */
     position: absolute;
     top: 0;
     left: 0;
@@ -136,174 +157,174 @@ body{
     border-right: 2px solid lightgreen;
     overflow: hidden;
     animation: animate 6s linear infinite; /* using animation*/
-}
-/* using keyframe animation for home header*/
-@keyframes animate
-{
-     0%,10%, 100%
-     {
-        width: 0;
-     }
-     70%,90%
-     {
-        width: 100%;
-     }
-}
-
-.home-para{
+  }
+  /* using keyframe animation for home header*/
+  @keyframes animate {
+    0%,
+    10%,
+    100% {
+      width: 0;
+    }
+    70%,
+    90% {
+      width: 100%;
+    }
+  }
+  
+  .home-para {
     font-weight: 1.5rem;
     font-weight: 600px;
     font-size: 40px;
-}
-
-#img-home{
+  }
+  
+  #img-home {
     width: 400px;
     height: 400px;
-    border-radius: 10%;   /* rounded coners */
-}
-
-.home-text .social-media{
-    margin-top: 50px;   
-}
-.home-text .social-media svg{
-    margin-left: 20px; 
-    width: 36px; 
+    border-radius: 10%; /* rounded coners */
+  }
+  /* home page social media links styling */
+  .home-text .social-media {
+    margin-top: 50px;
+  }
+  .home-text .social-media svg {
+    margin-left: 20px;
+    width: 36px;
     height: 36px;
-}
-
-
-/* about page styles */
-.about-section{
+  }
+  
+  /* ----------------------------- About Page Styles ----------------------------- */
+  
+  .about-section {
     background-color: black;
     color: white;
     display: flex;
     flex-direction: row;
     align-items: center;
     gap: 70px;
-}
-
- .about-section > .img { /* using structral selector */
+  }
+  /* Using structral selector */
+  .about-section > .img {
     flex: 1; /* Allow image to take available space */
-}
-
-.about-section #about-img{
+  }
+  /* Image specific styles in about section */
+  .about-section #about-img {
     height: 600px;
     width: 400px;
     margin: 30px;
-    border-radius: 40px;  /* rounded corners */
-}
-
-.about-section .about-text h1{
+    border-radius: 40px; /* rounded corners */
+  }
+  
+  .about-section .about-text h1 {
     font-size: 50px;
     margin-bottom: 20px;
     color: red;
-}
-.about-section .about-text h2{
+  }
+  .about-section .about-text h2 {
     font-size: 40px;
     margin-bottom: 20px;
     margin-right: 30px;
-}
-
-.about-section .about-text p{
+  }
+  
+  .about-section .about-text p {
     font-size: 20px;
     margin-bottom: 30px;
     margin-right: 100px;
-}
-.about-text .social{
+  }
+  /* Social link styling in about section */
+  .about-text .social {
     margin-right: 10px;
-}
-
-.contact-btn {
+  }
+  /* styling for the contact button in about page */
+  .contact-btn {
     display: inline-block;
     padding: 12px 24px;
-    background-color: #4CAF50; 
-    color: white; 
+    background-color: #4caf50;
+    color: white;
     border-radius: 25px; /* Rounded corners */
-    font-size: 16px; 
-    font-weight: bold; 
+    font-size: 16px;
+    font-weight: bold;
     margin-top: 40px;
-}
-
-.contact-btn:hover {
-    background-color: red; 
-    transform: translateY(-2px); 
-}
-
-.contact-btn a {
+  }
+  /* using action psuedo class */
+  .contact-btn:hover {
+    background-color: red;
+    transform: translateY(-2px);
+  }
+  
+  .contact-btn a {
     color: inherit; /* Inherit color from parent */
     text-decoration: none; /* Remove underline */
-}
-
-/* contact page styles */
-.contact-Container{
-    
+  }
+  
+  /* ----------------------------- Contact Page Styles ----------------------------- */
+  
+  .contact-Container {
     background-color: black;
     color: white;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start; 
+    justify-content: flex-start;
     align-items: center;
     padding: 2rem;
-    padding-top: 1rem;  /* Reduced top padding */
-}
-
-.contact-Container .contact-head{
+    padding-top: 1rem; /* Reduced top padding */
+  }
+  
+  .contact-Container .contact-head {
     font-size: 50px;
     color: red;
     padding-bottom: 60px;
     margin-top: 0;
-}
-
-.contact-Container .contact-form{
+  }
+  
+  .contact-Container .contact-form {
     font-size: 25px;
     max-width: 500px;
     font-size: 25px;
-    margin-bottom: 2rem
-}
-
-
-.contact-Container .contact-form input,
-.contact-Container .contact-form textarea {
+    margin-bottom: 2rem;
+  }
+  /* Input and textarea styling in contact form */
+  .contact-Container .contact-form input,
+  .contact-Container .contact-form textarea {
     width: 100%;
     padding: 0.75rem;
     font-size: 1rem;
     background-color: #333;
-    border: 1px solid #555;  /* border */
+    border: 1px solid #555; /* border */
     color: white;
-    border-radius: 4px;  
-    
-}
-.section-header{
-    text-shadow: 3px 3px 3px rgb(100, 92, 92);  /*using text  shadow */
-}
-
-
-.contact-Container .contact-form select,
-.contact-Container .contact-form .services {
-  width: 100%;
-  padding: 0.75rem;
-  font-size: 1rem;
-  background-color: #333;
-  border: 1px solid #555;
-  color: white;
-  border-radius: 4px;
-  cursor: pointer;
-  margin-top: 20px;
-}
-
-.contact-Container .contact-form select:focus,
-.contact-Container .contact-form .services:focus {
-  outline: none;
-  border-color: #777;
-}
-
-.contact-Container .contact-form select option,
-.contact-Container .contact-form .services option {
-  background-color: #333;
-  color: white;
-}
-
-.contact-Container .contact-form .btn[data-action="submit"]{  /* using attribute selector */ 
+    border-radius: 4px;
+  }
+  .section-header {
+    text-shadow: 3px 3px 3px rgb(100, 92, 92); /*using text  shadow */
+  }
+  
+  .contact-Container .contact-form select,
+  .contact-Container .contact-form .services {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1rem;
+    background-color: #333;
+    border: 1px solid #555;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .contact-Container .contact-form select:focus,
+  .contact-Container .contact-form .services:focus {
+    outline: none;
+    border-color: #777;
+  }
+  
+  .contact-Container .contact-form select option,
+  .contact-Container .contact-form .services option {
+    background-color: #333;
+    color: white;
+  }
+  /* Submit button styling in contact form */
+  /* using attribute selector */
+  /* Attribute and pseudo-classes, for higher specificity (0,0,3,2) */
+  .contact-Container .contact-form .btn[data-action="submit"] {
     width: 100%;
     height: 40px;
     background-color: greenyellow;
@@ -312,74 +333,83 @@ body{
     cursor: pointer;
     font-size: 20px;
     color: black;
-}
-.contact-Container .contact-form .btn[data-action="submit"]:hover{
+  }
+  /* using action psuedo class for hover the submit button*/
+  .contact-Container .contact-form .btn[data-action="submit"]:hover {
     background-color: #0056b3;
-}
-
-
-/* From https://css.glass */
-.contact-form{
-    /* using glass effect */
+  }
+  
+  /* From https://css.glass */
+  /* using glass effect */
+  .contact-form {
+    /* Semi-transparent light background */
     background: rgba(239, 236, 236, 0.14);
-    border-radius: 40px;                         /* round border */
+    border-radius: 40px; /* round border */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5.3px);
     -webkit-backdrop-filter: blur(5.3px);
     border: 1px solid rgba(239, 236, 236, 0.25);
-    
-    padding: 40px; 
-    width: 100%; 
-    max-width: 800px; 
+    padding: 40px;
+    width: 100%;
+    max-width: 800px;
     margin: 20px auto;
-}
-/* Valid state styling */
-.contact-Container .contact-form input:valid,
-.contact-Container .contact-form textarea:valid,
-.contact-Container .contact-form select:valid {
+  }
+  /* Valid state styling */
+  .contact-Container .contact-form input:valid,
+  .contact-Container .contact-form textarea:valid,
+  .contact-Container .contact-form select:valid {
     border-color: green; /* Green border for valid fields */
+    /* applies box shadow */
     box-shadow: 0 0 5px green; /* Green glow effect for valid fields */
-}
-
-/* Invalid state styling */
-.contact-Container .contact-form input:invalid,
-.contact-Container .contact-form textarea:invalid,
-.contact-Container .contact-form select:invalid {
+  }
+  
+  /* Invalid state styling */
+  .contact-Container .contact-form input:invalid,
+  .contact-Container .contact-form textarea:invalid,
+  .contact-Container .contact-form select:invalid {
     border-color: red; /* Red border for invalid fields */
+    /* applies box shadow */
     box-shadow: 0 0 5px red; /* Red glow effect for invalid fields */
-}
-
-
-/* Projects and Blogs page styles */
-.project {
-    background: linear-gradient(135deg, rgba(34, 193, 195, 1) 0%, rgba(253, 187, 45, 1) 100%); /* using gradient */ 
-    padding: 0; 
+  }
+  
+  /* ----------------------------- Projects and Blogs Styles ----------------------------- */
+  
+  .project {
+    background: linear-gradient(
+      135deg,
+      rgba(34, 193, 195, 1) 0%,
+      rgba(253, 187, 45, 1) 100%
+    ); /* using gradient */
+    padding: 0;
     margin: 0;
-}
-#projects{
+  }
+  /* Margin styling for projects section */
+  #projects {
     margin-bottom: 50px;
-}
-.content-container {
+  }
+  .content-container {
     max-width: 1200px;
     margin: 0px auto;
     padding: 2rem;
-}
-
-.section-header {
+  }
+  
+  .section-header {
     text-align: center;
     font-size: 2.5rem;
     color: #333;
     margin-bottom: 2rem;
-}
-
-.projects-flex, .blogs-flex {
+  }
+  
+  .projects-flex,
+  .blogs-flex {
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
     justify-content: center;
-}
-
-.project-card, .blog-card {
+  }
+  /* styling for projects and blogs cards*/
+  .project-card,
+  .blog-card {
     background-color: #f5f5f5;
     border-radius: 8px;
     padding: 1.5rem;
@@ -387,22 +417,26 @@ body{
     min-width: 250px;
     display: flex;
     flex-direction: column;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* using box shadow */
-}
-
-.project-card h3, .blog-card h3 {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* using box shadow */
+  }
+  
+  .project-card h3,
+  .blog-card h3 {
     font-size: 1.5rem;
     margin-bottom: 1rem;
     color: #333;
-}
-
-.project-card p, .blog-card p {
+  }
+  
+    
+  .project-card p,
+  .blog-card p {
     flex-grow: 1;
     margin-bottom: 1rem;
     color: #666;
-}
-
-.view-button, .read-more-button {
+  }
+  /* Button styling for viewing and reading more */
+  .view-button,
+  .read-more-button {
     display: inline-block;
     background-color: #007bff;
     color: white;
@@ -411,23 +445,26 @@ body{
     border-radius: 4px;
     align-self: flex-start;
     transition: background-color 0.3s ease;
-}
-
-.view-button:hover, .read-more-button:hover {
+  }
+  /* using action psuedo class for hover*/
+  .view-button:hover,
+  .read-more-button:hover {
     background-color: #0056b3;
-}
-/* using the Nth pseudo class */
-.project-card:nth-child(3n) {
-    border: 2px solid red; /* Add a red border to every third project card */
-}
-
-
-/* blog page styles */
-#blog{
+  }
+  /* using the Nth pseudo class */
+  /* Uses nth-child pseudo-class, increasing specificity to (0,0,2,1) */
+  .project-card:nth-child(3n) {
+    border: 2px solid red;
+    /* Add a red border to every third project card */
+  }
+  
+  /* ----------------------------- Blog Page Styles ----------------------------- */
+  
+  #blog {
     background-color: #f9f3e9;
-    
-}
-.container {
+  }
+  /* first Container (sports)styling */
+  .container {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -436,49 +473,49 @@ body{
     padding: 20px;
     background: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    
-}
-
-.container h1 {
+  }
+  
+  .container h1 {
     color: #d9534f;
     text-align: center;
-}
-
-h2 {
+  }
+  
+  h2 {
     color: #5bc0de;
     margin-top: 20px;
-}
-
-article, aside {
+  }
+  /* Margin styling for articles and aside sections */
+  article,
+  aside {
     margin: 20px 0;
-}
-
-article p {
+  }
+  
+  article p {
     margin: 10px 0;
-}
-
-.conclusion {
+  }
+  
+  .conclusion {
     font-weight: bold;
     margin-top: 20px;
-}
-
-aside {
+  }
+  /* Aside styling with background and border */
+  aside {
     background: #f9f9f9;
     padding: 15px;
     border-left: 4px solid #d9534f;
     color: #555;
-}
-
-aside h2 {
+  }
+  
+  aside h2 {
     font-size: 1.2em;
     color: #d9534f;
-}
-
-aside p {
+  }
+  
+  aside p {
     font-size: 0.9em;
-}
-
-.container-2 {
+  }
+  /* second container (web develpment) styling */
+  .container-2 {
     display: flex;
     flex-direction: column;
     width: 80%;
@@ -488,105 +525,105 @@ aside p {
     background: #f5f5f5;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
-}
-
-.container-2 h1 {
+  }
+  
+  .container-2 h1 {
     color: #4e73df;
     text-align: center;
     font-weight: 700;
-}
-
-.container-2 article p {
+  }
+  
+  .container-2 article p {
     margin: 10px 0;
     line-height: 1.6;
     color: #333;
-}
-
-.container-2 h2 {
+  }
+  
+  .container-2 h2 {
     color: #1cc88a;
     margin-top: 20px;
     font-size: 1.5em;
-}
-
-.container-2 .conclusion {
+  }
+  
+  .container-2 .conclusion {
     font-weight: bold;
     margin-top: 20px;
     color: #d9534f;
-}
-
-
-/* Responsive adjustments for home page */
-@media (max-width: 768px) {
+  }
+  /* ----------------------------- Responsive Styles ----------------------------- */
+  
+  /* Responsive adjustments for mobile*/
+  @media (max-width: 768px) {
+    /* Responsive adjustments for home page */
+    /* flexbox items vertically */
     .home-section {
-        flex-direction: column; 
-        height: auto; 
-        padding: 1rem; 
+      flex-direction: column;
+      height: auto;
+      padding: 1rem;
     }
-
+    /* Change font size for home text for beeter mobile readability */
     .home-text {
-        margin-right: 0; 
-        margin-bottom: 20px; 
-        font-size: 1.2rem; 
+      margin-right: 0;
+      margin-bottom: 20px;
+      font-size: 1.2rem;
     }
-
+  
     .home-header {
-        font-size: 40px;
+      font-size: 40px;
     }
-
+  
     #img-home {
-        width: 100%;
-        height: auto; /* Maintain aspect ratio */
+      width: 100%;
+      height: auto; /* Maintain aspect ratio */
     }
-
+  
     /* Responsive adjustments for navigation bar */
+    /* Stack navigation items vertically */
     .nav-bar {
-        flex-direction: column; 
-        align-items: center;
-         
+      flex-direction: column;
+      align-items: center;
     }
-
+  
     .nav-bar #nav-header {
-        margin-left: 0; 
-        margin-bottom: 10px; 
+      margin-left: 0;
+      margin-bottom: 10px;
     }
-
+  
     .nav-bar .nav-list {
-        flex-direction: column; 
-        align-items: center;
-        width: 100%; 
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
     }
-
+  
     .nav-bar .nav-list .item {
-        margin-left: 0; 
-        margin-bottom: 10px; 
+      margin-left: 0;
+      margin-bottom: 10px;
     }
-
+  
     /* Responsive adjustments for about page */
     .about-section {
-        flex-direction: column; 
-        align-items: center;
-        padding: 1rem; 
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
     }
-
+    /* Full-width image for mobile layout */
     #about-img {
-        width: 100%; 
-        height: auto; 
-        margin-bottom: 1rem; 
+      width: 100%;
+      height: auto;
+      margin-bottom: 1rem;
     }
-
+  
     .about-text {
-        text-align: center; 
-        width: 100%; 
-        margin-right: 0px; 
-        margin-left: 80px;
+      text-align: center;
+      width: 100%;
+      margin-right: 0px;
+      margin-left: 80px;
     }
-
+  
     /* Responsive adjustments project page */
-    .project-card, .blog-card {
-        width: 100%;
+    .project-card,
+    .blog-card {
+      width: 100%;
     }
-}
-
-
-
-
+  }
+  
